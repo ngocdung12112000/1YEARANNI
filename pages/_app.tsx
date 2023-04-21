@@ -1,6 +1,16 @@
 import '@/styles/globals.css'
-import type { AppProps } from 'next/app'
+import '@/styles/btnstart.css'
+import '@/styles/slide.css'
 
-export default function App({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+import type { ReactElement, ReactNode } from 'react'
+import GlobalLayout from './components/GlobalLayout'
+import { AppProps } from 'next/app'
+
+
+export default function MyApp({ Component, pageProps }: AppProps) {
+  return (
+    <GlobalLayout>
+      <Component {...pageProps} />
+    </GlobalLayout>
+  )
 }

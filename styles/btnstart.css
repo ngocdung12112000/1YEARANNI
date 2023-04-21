@@ -1,0 +1,283 @@
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: 100px;
+    background-size: 300% 300%;
+    backdrop-filter: blur(1rem);
+    border-radius: 5rem;
+    transition: 0.5s;
+    animation: gradient_301 5s ease infinite;
+    border: double 4px transparent;
+    background-image: linear-gradient(#212121, #212121), linear-gradient(137.48deg, #ffdb3b 10%, #FE53BB 45%, #8F51EA 67%, #0044ff 87%);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+}
+
+#container-stars {
+    position: fixed;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    transition: 0.5s;
+    backdrop-filter: blur(1rem);
+    border-radius: 5rem;
+}
+
+strong {
+    z-index: 2;
+    font-size: 22px;
+    letter-spacing: 5px;
+    color: #FFFFFF;
+    text-shadow: 0 0 4px white;
+}
+
+#glow {
+    position: absolute;
+    display: flex;
+    width: 12rem;
+}
+
+.circle {
+    width: 100%;
+    height: 30px;
+    filter: blur(2rem);
+    animation: pulse_3011 4s infinite;
+    z-index: -1;
+}
+
+.circle:nth-of-type(1) {
+    background: rgba(254, 83, 186, 0.636);
+}
+
+.circle:nth-of-type(2) {
+    background: rgba(142, 81, 234, 0.704);
+}
+
+.btn:hover #container-stars {
+    z-index: 1;
+    background-color: #212121;
+}
+
+.btn:hover {
+    transform: scale(1.1)
+}
+
+.btn:active {
+    border: double 4px #FE53BB;
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+    animation: none;
+}
+
+.btn:active .circle {
+    background: #FE53BB;
+}
+
+#stars {
+    position: relative;
+    background: transparent;
+    width: 200rem;
+    height: 200rem;
+}
+
+#stars::after {
+    content: "";
+    position: absolute;
+    top: -10rem;
+    left: -100rem;
+    width: 100%;
+    height: 100%;
+    animation: animStarRotate 90s linear infinite;
+}
+
+#stars::after {
+    background-image: radial-gradient(#ffffff 1px, transparent 1%);
+    background-size: 50px 50px;
+}
+
+#stars::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -50%;
+    width: 170%;
+    height: 500%;
+    animation: animStar 60s linear infinite;
+}
+
+#stars::before {
+    background-image: radial-gradient(#ffffff 1px, transparent 1%);
+    background-size: 50px 50px;
+    opacity: 0.5;
+}
+
+.modal{
+    width:600px;
+    margin:auto;
+    position: fixed;
+    top:50%;
+    left:50%;
+    transition-delay: 2s;
+    transform: translate(-50%, -50%) scale(0);
+}
+.modal .header{
+    background-image: linear-gradient(to top left,
+        #C086E1, #E8ABC7);
+        min-height:200px;
+        border-radius: 30px;
+        position: relative;
+        padding:20px 20px 100px 20px;
+        opacity: 0;
+        transition: 0.5s;
+        transform: translate(0,70px);
+}
+.modal img{
+    position: absolute;
+}
+.modal img:nth-child(1){
+    top:-200px;
+    width:90%;
+    left:5%;
+    opacity: 0;
+    transform: translate(0,70px);
+    transition: 0.7s;
+}
+.modal img:nth-child(2){
+    top:170px;
+    transform: rotate(80deg);
+    width:100px;
+    left:-50px;
+    opacity:0;
+    transition: 1s;
+
+}
+.modal img:nth-child(3){
+    transform: rotate(-80deg);
+    bottom:-90px;
+    width:100px;
+    right:-40px;
+    opacity:0;
+    transition: 1s;
+}
+.modal .content{
+    background-color: #E2F0EB4D;
+    padding:20px;
+    min-height: 100px;
+    border-radius: 30px;
+    backdrop-filter: blur(20px);
+    color:#eee;
+    font-family: monospace;
+    transform: translate(0,70px);
+    opacity: 0;
+    transition: 0.5s;
+    transition-delay: 0.2s;
+}
+.modal .confirm{
+    text-align: center;
+    margin-top:30px;
+}
+.modal .content label,
+.modal .content button{
+    display: inline-block;
+    border:none;
+    padding:10px;
+    color:#fff;
+    margin: 0 10px;
+}
+.modal .content label{
+    background-color: #ffffff4D;
+}
+.modal .content button{
+    background-color: #986FEA;
+}
+.modal input[name="setingModal"]{
+    display: none;
+}
+.modal:has(input[name="setingModal"]:checked){
+    transition: 0s;
+    transform: translate(-50%,-50%) scale(1);
+}
+.modal:has(input[name="setingModal"]:checked) .header{
+    opacity: 1;
+    transform: translate(0,0);
+}
+.modal:has(input[name="setingModal"]:checked) .content{
+    transition-delay: 0s;
+    opacity: 1;
+    transform: translate(0,-70px);
+}
+.modal:has(input[name="setingModal"]:checked) .header img:nth-child(1){
+    opacity: 1;
+    transform: translate(0,0);
+    transition-delay: 1s;
+}
+.modal:has(input[name="setingModal"]:checked) .header img:nth-child(2){
+    opacity: 1;
+    transform: rotate(-20deg);
+    transition-delay: 1.3s;
+    top:-20px;
+}
+.modal:has(input[name="setingModal"]:checked) .header img:nth-child(3){
+    opacity: 1;
+    transform: rotate(20deg);
+    transition-delay: 1.3s;
+    bottom:20px;
+}
+.side-section {
+    transition: all 2.5s ease;
+}
+
+
+@keyframes animStar {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(-135rem);
+    }
+}
+
+@keyframes animStarRotate {
+    from {
+        transform: rotate(360deg);
+    }
+
+    to {
+        transform: rotate(0);
+    }
+}
+
+@keyframes gradient_301 {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes pulse_3011 {
+    0% {
+        transform: scale(0.75);
+        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
+    }
+
+    70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+    }
+
+    100% {
+        transform: scale(0.75);
+        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+    }
+}
