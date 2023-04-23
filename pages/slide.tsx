@@ -1,5 +1,5 @@
 import { useRef } from 'react';
-import data from './data';
+import data from '../data';
 
 export default function Slide() {
     const slideRef = useRef<HTMLDivElement>(null);
