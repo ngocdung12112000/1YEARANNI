@@ -3,7 +3,7 @@ import '@/styles/btnstart.css'
 import '@/styles/slide.css'
 
 import type { ReactElement, ReactNode } from 'react'
-import GlobalLayout from './components/GlobalLayout'
+import GlobalLayout from '../components/GlobalLayout'
 import { AppProps } from 'next/app'
 
 
