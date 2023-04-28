@@ -17,7 +17,7 @@ export default function Slide() {
         <div className="slide-wrap w-full h-[100vh]">
             <div className="container-slide">
                 <div id="slide" ref={slideRef}>
-                    <div  className="item"  style={{ backgroundImage: `url(/images/p31.jpg)` }}>
+                    <div  className="item"  style={{ backgroundImage: `url(/images/p1.jpg)` }}>
                         <div className="content">
                             <div className="name text-xl"> Our first message </div>
                             <div className="des text-[16px]"> 
